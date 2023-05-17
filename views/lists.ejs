@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= listTitle %></h1>
+    <ul>
+       <% newItems.forEach((item)=>{%>
+        <form action="/delete" method="post">
+            <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()" >
+            <li style="display: inline-block;" ><%=item.name%></li>
+        </form>
+       <% })%> 
+       
+        
+    </ul>
+    <form action="/" method="post">
+        <input type="text" name="newValue">
+        <button type="submit" name='button' value=<%= listTitle %>>submit</button>
+    </form>
+</body>
+</html>
